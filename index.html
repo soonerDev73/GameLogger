@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>ScoreKeeper</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    
+    <style>
+        table{
+            border:1px solid black;
+        }
+        tr{
+            border:1px solid black;
+        }
+        td,th{
+            border:1px solid black;
+            padding:5px;
+            max-width: 300px;
+            text-align: center;
+            word-wrap: break-word;
+        }
+        th{
+            background-color: skyblue;
+            text-align: center;
+        }
+    </style>
+    </head>
+
+<body>
+    <div>
+        <form>
+            <label for="gamertype">Game</label>
+            <input type="text" id="gamertype">
+            <br>
+            <label for="date">Date</label>
+            <input type="date" id="date">
+            <br>
+            <label for="numofplayers"># of Players</label>
+            <input type="number" id="numofplayers">
+            <br>
+            <label for="winscore">Winner Score</label>
+            <input type="number" id="winscore">
+            <br>
+            <label for="loserscore">Loser Score</label>
+            <input type="number" id="loserscore">
+            <br>
+            <label for="winner">Winner</label>
+            <input type="text" id="winner">
+            <br>
+            <label for="gamenotes">Game Notes</label>
+            <textarea id="gamenotes"></textarea>
+            <br>
+            <input type="button" onclick="addLog()" id="submit">Submit</input>
+        </form>
+    </div>
+    <hr>
+    <div class="log">
+        <table id="myTable">
+            <tr>
+                <th>Game</th>
+                <th>Date</th>
+                <th># of Players</th>
+                <th>Winning Score</th>
+                <th>Losing Score</th>
+                <th>Winner</th>
+                <th>Game Notes</th>
+            </tr>
+        </table>
+        <p id="gameType"></p>
+        <p id="Date"></p>
+        <p id="numPlayers"></p>
+        <p id="winScore"></p>
+        <p id="loserScore"></p>
+        <p id="Winner"></p>
+        <p id="gameNotes"></p>
+        <ul id="myUL"> </ul>
+    </div>
+    <script>
+        /* var date = document.getElementById("date").value;
+                var numOfPlayers = document.getElementById("numofplayers").value;
+                var winScore = document.getElementById("winscore").value;
+                var loserScore = document.getElementById("loserscore").value;
+                var winner = document.getElementById("winner").value;
+                var gameNotes = document.getElementById("gamenotes").value; */
+        /*   function addLog () {
+                   var li= document.createElement("li");
+                   var gameType = document.getElementById("gamertype").value;
+                   var t = document.createTextNode(gameType);
+                   li.appendChild(t);
+                   document.getElementById("myUL").appendChild(li);
+                   return false;
+           }; */
+        /*    function addLog () {
+            
+                    document.getElementById('gameType').innerHTML = document.getElementById('gametype').value;
+                    document.getElementById('Date').innerHTML = document.getElementById('date').value;
+                    document.getElementById('numPlayers').innerHTML = document.getElementById('numofplayers').value;
+                    document.getElementById('winScore').innerHTML = document.getElementById('winscore').value;
+                    document.getElementById('loserScore').innerHTML = document.getElementById('loserscore').value;
+                    document.getElementById('Winner').innerHTML = document.getElementById('winner').value;
+                    document.getElementById('gameNotes').innerHTML = document.getElementById('gamenotes').value;
+                return false;
+                
+            };   */
+        function addLog() {
+            var gameType = document.getElementById("gamertype").value;
+            var Dates = document.getElementById("date").value;
+            var numOfPlayers = document.getElementById("numofplayers").value;
+            var winScore = document.getElementById("winscore").value;
+            var loserScore = document.getElementById("loserscore").value;
+            var winner = document.getElementById("winner").value;
+            var gameNotes = document.getElementById("gamenotes").value;
+            var table = document.getElementById("myTable");
+            var row = table.insertRow(1);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            var cell5 = row.insertCell(4);
+            var cell6 = row.insertCell(5);
+            var cell7 = row.insertCell(6);
+            cell1.innerHTML = gameType;
+            cell2.innerHTML = Dates;
+            cell3.innerHTML = numOfPlayers;
+            cell4.innerHTML = winScore;
+            cell5.innerHTML = loserScore;
+            cell6.innerHTML = winner;
+            cell7.innerHTML = gameNotes;
+        }
+    </script>
+</body>
+
+</html>
